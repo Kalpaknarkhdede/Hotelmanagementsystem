@@ -1,0 +1,285 @@
+#include<stdio.h>
+void Hfeatures();
+
+void HOffers();
+
+void Check();
+
+int Reservation();
+
+int Menu();
+
+
+
+void main()
+{
+	int Table,se,x,choice,y,n,bill,services,Online,starterQuantity,offline,Booking,features,Offers,Reservation,Check,Menu;
+	char phone[10]; 
+	printf("--------------Hotel Management--------------");
+    up:
+    hi:	
+	printf("\nWhat are you looking for? ");
+	printf("\nEnter 1 for Features");
+	printf("\nEnter 2 for Offers");
+	printf("\nEnter 3 for reservation");
+	printf("\nEnter 4 for Menu");
+	printf("\nEnter 5 for CheckIn or CheckOut");
+	printf("\nEnter 6 for Billing");
+	printf("\nEnter choice:- ");
+	scanf("%d",&services);
+	switch(services)
+	{
+			case 1:
+				   features();
+				   printf("\nIf you want to see another option then enter 1:- ");
+				   scanf("%d",&se);
+				   if(se==1)
+				   {
+				   	goto hi;
+				   }
+				   break;
+			case 2: 
+				   Offers();
+				   printf("\nIf you want to see another option then enter 1:- ");
+				   scanf("%d",&se);
+				   if(se==1)
+				   {
+				   	goto hi;
+				   }
+				   break;
+			case 3:
+				y=Reservation();
+				  printf("\nIf you want to see another option then enter 1:- ");
+				   scanf("%d",&se);
+				   if(se==1)
+				   {
+				   	goto hi;
+				   }
+				  break;
+			       
+			
+			case 4:
+				x=Menu();
+				
+				  printf("\nIf you want to see another option then enter 1:- ");
+				   scanf("%d",&se);
+				   if(se==1)
+				   {
+				   	goto hi;
+				   }
+				  break;	
+				  
+			case 5:
+				n=Check();
+			
+			       printf("\nIf you want to see another option then enter 1:- ");
+				   scanf("%d",&se);
+				   if(se==1)
+				   {
+				   	goto hi;
+				   }
+			       
+			       break;
+				  
+			case 6:
+				printf("Billing");
+				bill=x+y+n;
+				printf("Your Bill is%d", bill);
+				break;
+				
+			default:
+				printf("Invalid Input");
+			     goto up;	
+										
+	}
+}
+void Hfeatures()
+{
+	printf("-----------features----------");
+					printf("\nLobby");
+					printf("\nHotel Bars");
+					printf("\nFitness Facilities");
+					printf("\nOnsite Spa");
+					printf("\nMeeting Rooms");
+					printf("\nSwmming Pool");
+					printf("\nTennis court");
+					printf("\nGuest launges");
+					printf("\nOutdoor patio");
+					
+}
+void HOffers()
+{
+printf("----------------Offers-------------");
+				printf("25 \% Discount on Ac Rooms");
+				printf("\n20 \% Discount on Non Ac Rooms");
+				printf("\n20 \% Discount on Main course");
+				printf("\n30 \% Discount on Hall Booking");
+				printf("\n40 \% Discount on Meeting Rooms");	
+				printf("\nFlat 50\% Discount for Onsite Spa");
+					
+}
+int Check()
+{
+				int Cintime, CoutTime,count,bill;
+				printf("\n*-----------*General Time of Check In/ out*-----------*");
+				printf("\nCheck in time 8am to 8pm");
+				printf("\nCheck out time 10am");
+				printf("\nHow many days do you Stay");
+				scanf("%d",&count);
+				printf("\nEnter your Check In Time ");
+				scanf("%d",&Cintime);
+				printf("\nEnter your Check Out Time");
+				scanf("%d",&CoutTime);
+				bill= count*2000;
+				printf("\n\n\tThank You!\n\n\t Come again\n\n\tHave a safe Journey");
+				return bill;
+					
+}
+int Reservation()
+{
+	int reservation,confirm,laun,event,book,bill,day,pdays,bday;
+	printf("------------Reservation-------------");
+				printf("What would you like to reserve:- ");
+				printf("\nEnter 1 for hall Booking");
+				printf("\nEnter 2 for laun Booking");
+				printf("\nEnter 3 for Event Booking");
+				printf("\nEnter 4 for table Booking");
+				printf("\nEnter 5 for Rooms");
+				printf("\nEnter choice:- ");
+				scanf("%d",&reservation);
+				switch(reservation)
+				{
+					case 1:
+						printf("Do you want book hall?");
+						printf("\nEnter 1 to book  wedding hall 1500sq");
+						printf("\nEnter 2 to book party hall 800sq");
+						printf("\nEnter 4 to visit again to home page");
+						printf("\nEnter choice:- ");
+						scanf("%d",&confirm);
+						switch(confirm)
+						{
+							case 1:
+								printf("Rate for Wedding Hall is 50k per Day");
+								printf("\nEnter Numb of Day u want");
+								scanf("%d",&day);
+								bill=day*50000;
+								printf("\nYou have booked wedding hall succesfully");
+								break;
+							case 2:
+								printf("\nRate for Party Hall is 50k per Day");
+								printf("\nEnter Numb of Day u want");
+								scanf("%d",&pdays);
+								bill=bill+pdays*50000;
+									printf("\nYou have booked party hall succesfully");
+								break;
+							
+								
+								
+						}
+
+						
+						break;
+					case 2:
+						printf("Do you want yo book laun?");
+						printf("\nEnter 1 for booking");
+						printf("\nEnter 2 for home page");
+						printf("\nEnter choice:- ");
+						scanf("%d",&laun);
+						switch(laun)
+						{
+							case 1:
+								printf("You have booked laun sucessfully");
+								break;
+						}
+						break;
+						
+					case 3:
+						printf("Do you want to book Event");
+						printf("\nEnter 1 for booking");
+						printf("\nEnter choice:- ");
+						scanf("%d",&event);
+						switch(event)
+						{
+							case 1:
+								printf("You have booked event sucessfully");
+						}
+						break;
+					
+					case 4:
+						printf("\nDO you want to book Table");
+						printf("\nwe have two types of tables 1:Family table 2: Couple table which one do you want to book?");
+						printf("\nEnter 1 to book familytable");
+						printf("\nEnter 2 to book couple table ");
+						printf("\nEnter choice:-");
+						scanf("%d",&book);
+				}
+				
+return bill;					
+}
+int Menu()
+{
+	int food,Qnt, bill,Main,Dess,se,drnk,me,de,dr;
+	printf("---------------Menu------------------");
+	hi:
+					printf("\nEnter 1 for starter:- ");//100rs
+					printf("\nEnter 2 for main course:- ");//400rs
+					printf("\nEnter 3 for dessert:- ");//200
+					printf("\nEnter 4 for drinks:- ");//150
+					printf("\nEnter your choice:- ");
+					scanf("%d",&food);
+					switch(food)
+					{
+							case 1: 
+								printf("-------------Starters------------------");
+								
+								printf("\nSoup\t\t\t100Rs\nmasala papad\t100Rs\nnuggets\t\t\t100Rs\nchicken65\t\t100Rs\nspring rolls\t\t100Rs\n");
+							    printf("Enter Quantity:- ");
+							    scanf("%d",&Qnt);
+							    bill=Qnt*100;
+						    	printf("\nIf you want to see another option then enter 1 otherwise enter 2");
+				   				scanf("%d",&se);
+				   				if(se==1)
+				   				{
+				   				goto hi;
+				                }
+							    
+						    break;
+							case 2:
+								printf("-------------Main Course-------------");
+								printf("\nPalak Paneer\t\t400Rs\nButter Chicken\t\t400Rs\nTawa Veg\t\t400Rs\nPaneer Bucket\t\t400Rs\nVeg Kurma\t\t400Rs\n");
+							    scanf("%d",&Main);
+							    bill=bill+Main*400;
+						    	printf("\nIf you want to see another option then enter 1");
+				   				scanf("%d",&me);
+				   				if(me==1)
+				   				{
+				   				goto hi;
+				                }
+							break;
+							case 3:
+								printf("-------------Desserts----------------");
+								printf("\nWaffles\t\t150Rs\nPancakes\t150Rs\nBrownie\t\t150Rs\nIce Cream\t150Rs\nFaluda\t\t150Rs\n");
+	                            scanf("%d",&Dess);
+							    bill=bill+Dess*150;
+						    	 printf("\nIf you want to see another option then enter 1");
+				   				scanf("%d",&de);
+				   				if(de==1)
+				   				{
+				   				goto hi;
+				                }						
+							break;
+							case 4:
+								printf("-------------Drinks------------------");
+								printf("\nMojito\t\t\t300Rs\nMilkshake\t\t300Rs\nCold Coffee\t\t300Rs\nSmoothie\t\t300rs\nSoda Bottle\t\t300Rs\n");
+							    scanf("%d",&drnk);
+							    bill=bill+drnk*300;
+						    	 printf("\nIf you want to see another option then enter 1");
+				   				scanf("%d",&dr);
+				   				if(dr==1)
+				   				{
+				   				goto hi;
+				                }
+					}
+											
+return bill;						
+}
